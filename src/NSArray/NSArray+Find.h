@@ -3,7 +3,7 @@
 //  IList
 //
 //  Created by Corey Johnson on 12/19/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Probably Interactive. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,5 +16,7 @@
 
 - (NSArray *)findAllWhereKeyPath:(NSString *)keyPath equals:(id)value;
 - (NSArray *)findAllWhereKeyPath:(NSString *)keyPath equalsBoolean:(BOOL)value;
+
+- (NSArray *)map:(SEL)selector target:(id)target;
 
 @end

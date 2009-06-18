@@ -3,7 +3,7 @@
 //  Craigslist
 //
 //  Created by Corey Johnson on 12/31/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Probably Interactive. All rights reserved.
 //
 
 #import "UIImage+resizing.h"

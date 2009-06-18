@@ -3,7 +3,7 @@
 //  FilmBuff
 //
 //  Created by Corey Johnson on 11/12/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Probably Interactive. All rights reserved.
 //
 
 #import "UIView+FrameEditing.h"
@@ -35,6 +35,13 @@
 
 - (float)frameRight {
 	return self.frame.origin.x + self.frame.size.width;
+}
+
+- (CGPoint)frameCenter {
+	float xCenter = (self.frame.size.width / 2.0) + self.frame.origin.x;
+	float yCenter = (self.frame.size.height / 2.0) + self.frame.origin.y;
+	
+	return CGPointMake(xCenter, yCenter);
 }
 
 

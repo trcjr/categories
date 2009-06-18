@@ -32,7 +32,7 @@
 //  THE SOFTWARE.
 
 
-#import "NSDate-Calendar.h"
+#import "NSDate+Calendar.h"
 
 
 @implementation NSDate(Calendar)

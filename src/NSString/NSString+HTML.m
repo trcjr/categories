@@ -3,8 +3,9 @@
 //  FilmBuff
 //
 //  Created by Corey Johnson on 11/28/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Probably Interactive. All rights reserved.
 //
+#ifdef INCLUDES_REGEX
 
 #import "NSString+HTML.h"
 #import "RegexKitLite.h"
@@ -33,3 +34,5 @@
 }
 
 @end
+
+#endif

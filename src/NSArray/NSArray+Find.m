@@ -3,7 +3,7 @@
 //  IList
 //
 //  Created by Corey Johnson on 12/19/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 Probably Interactive. All rights reserved.
 //
 
 #import "NSArray+Find.h"
@@ -36,6 +36,15 @@
 - (NSArray *)findAllWhereKeyPath:(NSString *)keyPath equalsBoolean:(BOOL)value {
 	return [self findAllWhereKeyPath:keyPath equals:[NSNumber numberWithBool:value]];
 }
+
+- (NSArray *)map:(SEL)selector target:(id)target {
+	NSMutableArray *mappedArray = [NSMutableArray array];
+	for (id object in self) {
+		[mappedArray addObject:[target performSelector:selector withObject:object]];
+	}
+	return mappedArray;
+}
+
 
 
 @end
