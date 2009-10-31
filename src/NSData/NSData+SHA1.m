@@ -47,14 +47,15 @@
 
 #define HEComputeDigestNSString(method)                                 \
     static char __HEHexDigits[] = "0123456789abcdef";                   \
-    unsigned char digestString[2*CC_##method##_DIGEST_LENGTH];          \
+    unsigned char digestString[2*CC_##method##_DIGEST_LENGTH + 1];      \
     unsigned int i;                                                     \
     HEComputeDigest(method)                                             \
     for(i=0; i<CC_##method##_DIGEST_LENGTH; i++) {                      \
         digestString[2*i]   = __HEHexDigits[digest[i] >> 4];            \
         digestString[2*i+1] = __HEHexDigits[digest[i] & 0x0f];          \
     }                                                                   \
-    return [NSString stringWithCString:(char *)digestString length:2*CC_##method##_DIGEST_LENGTH];
+    digestString[2*CC_##method##_DIGEST_LENGTH] = '\0';                 \
+    return [NSString stringWithCString:(char *)digestString encoding:NSASCIIStringEncoding];
 
 #pragma mark -
 #pragma mark SHA1 Hashing routines
