@@ -2,7 +2,7 @@
 //  NSData+Compression.m
 //
 //  Created by Geoffrey Garside on 29/06/2008.
-//  Copyright 2008 Geoffrey Garside. All rights reserved.
+//  Believed to be Public Domain.
 //
 //  Methods extracted from source given at
 //  http://www.cocoadev.com/index.pl?NSDataCategory
