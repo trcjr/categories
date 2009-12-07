@@ -47,6 +47,14 @@
 
 // Set Methods
 // -----------
+- (UIView *)addToY:(float)value {
+	CGRect frame = self.frame;
+	frame.origin.y += value;	
+	self.frame = frame;	
+	return self;
+        
+}
+
 - (UIView *)setFrameX:(float)x {
 	CGRect frame = self.frame;
 	frame.origin.x = x;

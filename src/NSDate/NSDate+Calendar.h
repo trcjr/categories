@@ -34,13 +34,13 @@
 
 @interface NSDate(Calendar)
 
-  +(id)today;
-  -(int)year;
-  -(int)month;
-  -(int)day;
-  -(int)weekday;
-  -(NSDate *)firstDayOfCurrentMonth;
-  -(NSDate *)firstDayOfCurrentWeek;
-  -(NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds;
+    +(id)today;
+    -(int)year;
+    -(int)month;
+    -(int)day;
+    -(int)weekday;
+    -(NSDate *)firstDayOfCurrentMonth;
+    -(NSDate *)firstDayOfCurrentWeek;
+    -(NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds;
 
 @end

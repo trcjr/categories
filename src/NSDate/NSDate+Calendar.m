@@ -38,65 +38,65 @@
 @implementation NSDate(Calendar)
 
 + (id)today{
-  NSDate *theDate = [NSDate date];
-  
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:theDate];
-  [comps setYear:[theDate year]];
-  [comps setMonth:[theDate month]];
-  [comps setDay:[theDate day]];
-  [comps setHour:0];
-  [comps setMinute:0];
-  [comps setSecond:0];
-  return [[NSCalendar currentCalendar] dateFromComponents:comps];
+    NSDate *theDate = [NSDate date];
+    
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:theDate];
+    [comps setYear:[theDate year]];
+    [comps setMonth:[theDate month]];
+    [comps setDay:[theDate day]];
+    [comps setHour:0];
+    [comps setMinute:0];
+    [comps setSecond:0];
+    return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
 - (int)year{
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:self];
-  return [comps year];
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:self];
+    return [comps year];
 }
 
 - (int)month{
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSMonthCalendarUnit) fromDate:self];
-  return [comps month];
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSMonthCalendarUnit) fromDate:self];
+    return [comps month];
 }
 
 - (int)day{
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSDayCalendarUnit) fromDate:self];
-  return [comps day];
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSDayCalendarUnit) fromDate:self];
+    return [comps day];
 }
 
 - (int)weekday{
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSWeekdayCalendarUnit) fromDate:self];
-  return [comps weekday];
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSWeekdayCalendarUnit) fromDate:self];
+    return [comps weekday];
 }
 
 - (NSDate *)firstDayOfCurrentMonth{
-  NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
-  [comps setDay:1];
-  
-  return [[NSCalendar currentCalendar] dateFromComponents:comps];
-  
+    NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
+    [comps setDay:1];
+    
+    return [[NSCalendar currentCalendar] dateFromComponents:comps];
+    
 }
 
 - (NSDate *)firstDayOfCurrentWeek{
-  NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
-  [adjustmentComps setDay:-([self weekday]-1)];
-  NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:adjustmentComps toDate:self options:0];
-  [adjustmentComps release];
-  return newDate;
+    NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
+    [adjustmentComps setDay:-([self weekday]-1)];
+    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:adjustmentComps toDate:self options:0];
+    [adjustmentComps release];
+    return newDate;
 }
 
 - (NSDate *)dateByAddingYears:(int)years months:(int)months days:(int)days hours:(int)hours minutes:(int)minutes seconds:(int)seconds{
-  NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
-  [adjustmentComps setYear:years];
-  [adjustmentComps setMonth:months];
-  [adjustmentComps setDay:days];
-  [adjustmentComps setHour:hours];
-  [adjustmentComps setMinute:minutes];
-  [adjustmentComps setSecond:seconds];
-  NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:adjustmentComps toDate:self options:0];
-  [adjustmentComps release];
-  return newDate;
+    NSDateComponents *adjustmentComps = [[NSDateComponents alloc] init];
+    [adjustmentComps setYear:years];
+    [adjustmentComps setMonth:months];
+    [adjustmentComps setDay:days];
+    [adjustmentComps setHour:hours];
+    [adjustmentComps setMinute:minutes];
+    [adjustmentComps setSecond:seconds];
+    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:adjustmentComps toDate:self options:0];
+    [adjustmentComps release];
+    return newDate;
 }
 
 
