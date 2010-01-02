@@ -11,6 +11,8 @@
 
 @interface UIView (FrameEditing)
 
+- (UIView *)addToY:(float)value;
+
 - (UIView *)setFrameX:(float)x;
 - (UIView *)setFrameY:(float)y;
 - (UIView *)setFrameHeight:(float)height;

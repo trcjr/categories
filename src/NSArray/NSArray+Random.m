@@ -20,4 +20,8 @@
 	return randomArray;	
 }
 
+- (id)random {
+    return [self objectAtIndex:random() % self.count];
+}
+
 @end

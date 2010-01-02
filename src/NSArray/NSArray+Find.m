@@ -26,7 +26,7 @@
 - (NSArray *)findAllWhereKeyPath:(NSString *)keyPath equals:(id)value {
 	NSMutableArray *matches = [NSMutableArray array];
 	for (id object in self) {
-		id objectValue = [object valueForKeyPath:keyPath];
+		id objectValue = keyPath ? [object valueForKeyPath:keyPath] : object; // If no keypath is given, check value against object
 		if ([objectValue isEqual:value] || objectValue == value) [matches addObject:object];			
 	}
 	

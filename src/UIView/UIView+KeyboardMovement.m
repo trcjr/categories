@@ -30,14 +30,14 @@ static NSMutableDictionary *kOriginalPositions;
 	[[[notification userInfo] valueForKey:@"UIKeyboardAnimationDurationUserInfoKey"] getValue:&animationDurration];
 	[[[notification userInfo] valueForKey:@"UIKeyboardAnimationCurveUserInfoKey"] getValue:&animationCurve];
 #else
-    keyboardBounds = CGRectMake(0, 0, 320, 216);
-    animationDurration = 0.3;
-    animationCurve = UIViewAnimationCurveEaseInOut;
+        keyboardBounds = CGRectMake(0, 0, 320, 216);
+        animationDurration = 0.3;
+        animationCurve = UIViewAnimationCurveEaseInOut;
 #endif
 	
 	[kOriginalPositions setObject:[NSNumber numberWithFloat:[self frameTop]] forKey:[NSNumber numberWithInt:(int)self]];
 
-	CGPoint point = [self convertPoint:CGPointMake(0, [view frameBottom]) toView:self];
+	CGPoint point = [view convertPoint:CGPointMake(0, [view frameBottom]) toView:self];
 	float localBottomOfTextField = point.y;
 	float localTopOfKeyboard = [self localTopOfKeyboardWithHeight:keyboardBounds.size.height];
 	
@@ -61,11 +61,11 @@ static NSMutableDictionary *kOriginalPositions;
 	[[[notification userInfo] valueForKey:@"UIKeyboardAnimationDurationUserInfoKey"] getValue:&animationDurration];
 	[[[notification userInfo] valueForKey:@"UIKeyboardAnimationCurveUserInfoKey"] getValue:&animationCurve];
 #else
-    keyboardBounds = CGRectMake(0, 0, 320, 216);
-    animationDurration = 0.3;
-    animationCurve = UIViewAnimationCurveEaseInOut;
+        keyboardBounds = CGRectMake(0, 0, 320, 216);
+        animationDurration = 0.3;
+        animationCurve = UIViewAnimationCurveEaseInOut;
 #endif
-    
+        
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:animationDurration];
 	[UIView setAnimationCurve:animationCurve]; {
@@ -73,8 +73,8 @@ static NSMutableDictionary *kOriginalPositions;
 		[self setFrameY:y];
 	}
 	[UIView commitAnimations];
-    
-    [kOriginalPositions removeObjectForKey:[NSNumber numberWithInt:(int)self]];
+        
+        [kOriginalPositions removeObjectForKey:[NSNumber numberWithInt:(int)self]];
 }
 
 @end

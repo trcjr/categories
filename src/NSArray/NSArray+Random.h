@@ -11,5 +11,6 @@
 @interface NSArray (Random)
 
 - (NSArray *)randomize;
+- (id)random;
 
 @end
